@@ -1,6 +1,7 @@
 package org.tfoc;
 
 import java.util.Arrays;
+import java.util.EmptyStackException;
 
 /**
  * MinStack object will be instantiated and called as such:
@@ -36,20 +37,20 @@ public class MinStack {
 
     public void pop() {
 
-        //TODO throw error when there are no elements in the stack
+        if(elements == 0) throw new EmptyStackException();
         stack[elements - 1] = null;
         elements--;
     }
 
     public int top() {
 
-        //TODO throw error when there are no elements in the stack
+        if(elements == 0) throw new EmptyStackException();
         return stack[elements - 1];
     }
 
     public int getMin() {
 
-        //TODO throw error when there are no elements in the stack
+        if(elements == 0) throw new EmptyStackException();
         return stack[0];
     }
 
